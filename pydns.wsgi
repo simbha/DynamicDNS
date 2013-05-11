@@ -1,0 +1,1 @@
+from DynamicDNS import app as application
