@@ -8,12 +8,8 @@ shelve.init_app(app)
 
 @app.route("/update_ip", methods=["POST"])
 def update():
-    secret = request.form.get("secret")
     ip = request.form.get("ip")
     host = request.form.get("hostname")
-    # My trivially simple security. Nearly laughable really.
-    if secret != "0ranges and Lem0ns":
-        return abort(403)
     db = get_shelve('c')
     db[str(host)] = str(ip)
     return "OK"

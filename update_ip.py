@@ -4,7 +4,6 @@ import re
 import os
 
 target = "http://ssh.angrykittens.co.uk/update_ip"
-secret = "0ranges and Lem0ns"
 hostname = "freja"
 
 
@@ -27,7 +26,7 @@ if not is_ip(ip):
     ip = requests.get("http://www.ifconfig.me/ip").text.strip()
 
 if (is_ip(ip)) and (last_ip != ip):
-    requests.post(target, data={"ip": ip, "hostname": hostname, "secret":secret})
+    requests.post(target, data={"ip": ip, "hostname": hostname})
 
     with open(".pdns.last", "w") as new:
         msg = "[%s] Updated IP as %s.\n" % (arrow.get().now(), ip)
