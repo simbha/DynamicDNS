@@ -28,4 +28,3 @@ def hosts(name):
 def all_hosts():
     return "<br/>".join("%s - %s" % (x, y) for x, y in get_shelve("c").iteritems())
 
-app.run(host="0.0.0.0", port=4000, debug=True)

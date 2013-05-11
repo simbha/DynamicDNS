@@ -3,7 +3,7 @@ import arrow
 import re
 import os
 
-target = "http://ssh.angrykittens.co.uk:4000/update_ip"
+target = "http://ssh.angrykittens.co.uk/update_ip"
 secret = "0ranges and Lem0ns"
 hostname = "freja"
 
