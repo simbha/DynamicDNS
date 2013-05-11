@@ -15,7 +15,7 @@ def update():
     if secret != "0ranges and Lem0ns":
         return abort(403)
     db = get_shelve('c')
-    db[host] = ip
+    db[str(host)] = str(ip)
 
 
 @app.route("/host/<name>")
@@ -28,4 +28,4 @@ def hosts(name):
 def all_hosts():
     return "<br/>".join("%s - %s" % (x, y) for x, y in db.iteritems())
 
-app.run(host="0.0.0.0", port=5000, debug=True)
+app.run(host="0.0.0.0", port=4000, debug=True)
