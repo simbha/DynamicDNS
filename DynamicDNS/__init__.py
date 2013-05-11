@@ -16,7 +16,7 @@ def update():
         return abort(403)
     db = get_shelve('c')
     db[str(host)] = str(ip)
-
+    return "OK"
 
 @app.route("/host/<name>")
 def hosts(name):
@@ -26,6 +26,6 @@ def hosts(name):
 
 @app.route("/hosts")
 def all_hosts():
-    return "<br/>".join("%s - %s" % (x, y) for x, y in db.iteritems())
+    return "<br/>".join("%s - %s" % (x, y) for x, y in get_shelve("c").iteritems())
 
 app.run(host="0.0.0.0", port=4000, debug=True)
